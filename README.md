@@ -1,11 +1,10 @@
 # Algorithm for file updates in Python
 
-As part of my cybersecurity training, I worked on automating the process of updating access control files using Python. The scenario involved managing an allow list of IP addresses for a healthcare organization. By creating a Python algorithm, I efficiently updated the allow list by removing IP addresses flagged for restricted access. This project demonstrated my ability to use Python for security file management and access control compliance.
+As part of my Google cybersecurity training, I worked on automating the process of updating access control files using Python. The scenario involved managing an allow list of IP addresses for a healthcare organization. By creating a Python algorithm, I efficiently updated the allow list by removing IP addresses flagged for restricted access. This project demonstrated my ability to use Python for security file management and access control compliance.
 
 ## Project Description
 
-As a security professional working at a healthcare company,  part of my job requires me to regularly update a file that identifies the employees who can access restricted content. The contents of the file are based on who is working with personal patient records. Employees are restricted access based on their IP address. There is an allow list for IP addresses permitted to sign into the restricted subnetwork. There's also a remove list that identifies which employees I must remove from this allow list.
-My task is to create an algorithm that uses Python code to check whether the allow list contains any IP addresses identified on the remove list. If so, I will remove those IP addresses from the file containing the allow list.
+As a security professional working at a healthcare company, part of my job required me to regularly update a file that identified the employees who could access restricted content. The contents of the file were based on who was working with personal patient records. Employees were restricted access based on their IP address. There was an allow list for IP addresses permitted to sign into the restricted subnetwork. There was also a remove list that identified which employees I needed to remove from this allow list. My task was to create an algorithm that used Python code to check whether the allow list contained any IP addresses identified on the remove list. If so, I removed those IP addresses from the file containing the allow list.
 
 ## Objective
 
@@ -20,35 +19,35 @@ The objective of this project was to automate the process of updating an allow l
 - Algorithm design
 
 ## Steps
-### 1. Open the file that contains the allow list:
-The file that I want to open and read is called **_“allow_list.txt”_**. This file contains IP addresses. 
-I first assigned a string containing this file name to the **_import_file_** variable. Then, I use a **_with_** statement to open it. I use the variable **_file_** to store the file while I work with it inside the **_with_** statement. I also assign all of the IP addresses that should be removed to a variable called **_remove_list_**. This is illustrated in the code bellow:
+### 1. Opened the file that contained the allow list:
+The file I needed to open and read was called **_“allow_list.txt”_**. This file contained IP addresses. 
+I first assigned a string containing this file name to the **_import_file_** variable. Then, I used a **_with_** statement to open it. I used the variable **_file_** to store the file while I worked with it inside the **_with_** statement. I also assigned all of the IP addresses that needed to be removed to a variable called **_remove_list_**. This is illustrated in the code bellow:
 
 ![Python 1](https://github.com/user-attachments/assets/9c19566b-e79d-417c-99fa-dd8bda2efa84) 
 *Ref 1: python code*
 
 ### 2. Read the file contents:
-Next, I use the **_.read()_** method to convert the contents of the allow list file into a string so that I can read them. I then store this string in a variable called **_ip_addresses_**. This is shown below,
+Next, I used the **_.read()_** method to convert the contents of the allow list file into a string so that I could read them. I then stored this string in a variable called **_ip_addresses_**. This is shown below,
 
 ![Python 2](https://github.com/user-attachments/assets/93ba1d90-1841-452f-8309-ff7d8fa78ac3)
 *Ref 2: python code*
 
 
 ### 3. Convert the string into a list:
-In order to remove individual IP addresses from the allow list, the IP addresses need to be in a list format. Therefore, I used the **_.split()_** method to convert the **_ip_addresses_** string into a list.
+To remove individual IP addresses from the allow list, the IP addresses needed to be in a list format. Therefore, I used the **_.split()_** method to convert the **_ip_addresses_** string into a list.
 
 ![Python 3](https://github.com/user-attachments/assets/3464fa6b-79fa-470d-a50f-836a2cbde031)
 *Ref 3: python code*
 
 
 ### 4. Iterate through the remove list:
-The second list called **_remove_list_** contains all of the IP addresses that should be removed from the **_ip_addresses_** list. To remove them, I first set up the header of a **_for_** loop that will iterate through the **_remove_list_** and used **_element_** as the loop variable.
+The second list called **_remove_list_** contains all of the IP addresses that needed to be removed from the **_ip_addresses_** list. To remove them, I first set up the header of a **_for_** loop that will iterate through the **_remove_list_** and used **_element_** as the loop variable.
 
 ![Python 4](https://github.com/user-attachments/assets/aabec37d-27c2-46c2-af59-000834e897c0)
 *Ref 4: python code*
 
 ### 5. Remove IP addresses that are on the remove list:
-In the body of the above iterative statement, I added a code that will remove all the IP addresses from the allow list that are also on the remove list. First, I created a conditional that evaluates if the loop variable **_element_** is part of the **_ip_addresses_** list. Then, within that conditional, I applied the **_.remove()_** method to the **_ip_addresses_** list and removed the IP addresses identified in the loop variable **_element_**. Applying the **_.remove()_** method in this way is possible because there are no duplicates in the **_ip_addresses_** list. 
+In the body of the above iterative statement, I added a code that will remove all the IP addresses from the allow list that are also on the remove list. First, I created a conditional that evaluates if the loop variable **_element_** is part of the **_ip_addresses_** list. Then, within that conditional, I applied the **_.remove()_** method to the **_ip_addresses_** list and removed the IP addresses identified in the loop variable **_element_**. Applying the **_.remove()_** method in this way was possible because there are no duplicates in the **_ip_addresses_** list. 
 
 ![Python 5](https://github.com/user-attachments/assets/479711eb-8fb7-4aed-b307-96c85a734197)
 
